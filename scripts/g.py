@@ -2,6 +2,7 @@
 import urllib
 from collections import defaultdict
 import json
+import csv
 
 d = defaultdict(list)
 # get distinct location values
@@ -25,11 +26,11 @@ for l in d.keys():
         pass
 
 # output, appending formatted location, lat, long
+gw = csv.writer(open('g.out', 'w'))
 with open('g.in','r') as f:
-    with open('g.out','w') as o:
-        for line in f:
-            l = line.split('|')[-1].strip().lower()
-            if not len(d[l]) > 0:
-                l = "india"
-            oline = "|".join([line.strip(), d[l][0], "%0.7f" % d[l][1], "%0.7f" %d[l][2]])
-            o.write(oline+"\n")
+    for line in f:
+        l = line.split('|')[-1].strip().lower()
+        if not len(d[l]) > 0:
+            l = "india"
+        oline = "|".join([line.strip(), d[l][0], "%0.7f" % d[l][1], "%0.7f" %d[l][2]])
+        gw.writerow(oline.split('|'))
