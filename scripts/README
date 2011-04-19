@@ -1,0 +1,7 @@
+
+- save the print view of member table as ceg-86.html
+
+- python s.py  # save output as g.in
+
+- python g.py # takes g.in and produces g.out to be loaded in app engine
+
