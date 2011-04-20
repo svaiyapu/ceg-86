@@ -1,0 +1,6 @@
+indexes:
+
+- kind: Member
+  properties:
+  - name: faddr
+  - name: fn
