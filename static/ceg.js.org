@@ -1,0 +1,19 @@
+  var INDIA = new google.maps.LatLng(20.5936840,78.9628800);
+  function initialize() {
+    var mapOptions = {
+      zoom: 2,
+      center: INDIA,
+      mapTypeId: google.maps.MapTypeId.ROADMAP
+    };
+    var map = new google.maps.Map(document.getElementById("map_canvas"),
+        mapOptions);
+    hookem();
+  }
+
+  // locations
+
+  // markers
+
+  // info boxes
+
+  // hookem up
