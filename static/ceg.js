@@ -62,7 +62,7 @@ function hookem(map, locs) {
             content += "<td><strong>" + mems[i].getName() + "</strong></td>";
             content += "<td><em>" + mems[i].dpt + "</em></td>";
             if (mems[i].sec != null)
-                content += "<td></em>" + mems[i].sec + "</em></td>";
+                content += "<td><em>" + mems[i].sec + "</em></td>";
             content += "</tr>";
         } 
         content += "</table>";

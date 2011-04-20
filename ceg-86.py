@@ -10,11 +10,14 @@ import models
 
 class MainPage(webapp.RequestHandler):
     def get(self):
-        self.response.headers['Content-Type'] = 'text/plain'
-        self.response.out.write('Hello,World')
+        self.redirect("/static/map.html")
+
+class MemberScript(webapp.RequestHandler):
+    def get(self):
+        pass
 
 application = webapp.WSGIApplication(
-                                     [('/', MainPage)],
+                                     [('/', MainPage), ('/ceg.js', MemberScript)],
                                      debug=True)
 
 def main():
