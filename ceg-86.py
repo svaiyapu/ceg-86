@@ -14,7 +14,11 @@ class MainPage(webapp.RequestHandler):
 
 class MemberScript(webapp.RequestHandler):
     def get(self):
-        pass
+        q = models.Member.all()
+        members = q.fetch(200)
+        template_values = { 'members' : members }
+        path = os.path.join(os.path.dirname(__file__), 'templates', "ceg.js.tmpl")
+        self.response.out.write(template.render(path, template_values))
 
 application = webapp.WSGIApplication(
                                      [('/', MainPage), ('/ceg.js', MemberScript)],

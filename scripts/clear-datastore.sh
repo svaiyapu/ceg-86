@@ -1,8 +1,8 @@
 # remote api
-google_appengine/remote_shell_api.py ceg-86
+google_appengine/remote_api_shell.py ceg-86
 
 # fix the path
-sys.append(os.path.join(os.getcwd(), 'ceg-86')
+sys.path.append(os.path.join(os.getcwd(), 'ceg-86'))
 import models
 
 query =  models.Member.all()

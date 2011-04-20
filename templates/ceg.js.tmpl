@@ -88,11 +88,11 @@ var members = new Array();
 // Emit member instantiations here
 {% for member in members %}
     members.push(new Member(
-                    "{{ member.fn }}',
-                    "{{ member.ln }}',
-                    "{{ member.dpt }}',
-                    "{{ member.sec }}',
-                    "{{ member.faddr }}',
+                    "{{ member.fn }}",
+                    "{{ member.ln }}",
+                    "{{ member.dpt }}",
+                    "{{ member.sec }}",
+                    "{{ member.faddr }}",
                     {{ member.lat }},
                     {{ member.lng }}
                     )
