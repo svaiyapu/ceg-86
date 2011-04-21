@@ -4,12 +4,13 @@ from collections import defaultdict
 import json
 import csv
 
-d = defaultdict(list)
+d = dict()
 # get distinct location values
 with open('g.in','r') as f:
     for line in f:
         l = line.split('|')[-1].strip().lower()
-        d[l] = []
+        if not d.has_key(l): 
+            d[l] = []
 
 # attempt to geocode them
 url = "http://maps.googleapis.com/maps/api/geocode/json?sensor=false&%s"
