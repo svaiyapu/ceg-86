@@ -4,3 +4,5 @@
   #header { height: 4%; padding-left: 1em; padding-top: 0.5em; padding-bottom: 3em; 
             font-family: Georgia, serif; font-size: 20pt }
   #title { padding-left: 3em; vertical-align: 1.9em; }
+  a.memberLink, a.memberLink:visited { text-decoration: none; color: black; }
+  a.memberLink:hover { text-decoration: underline }

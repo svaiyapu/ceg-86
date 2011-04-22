@@ -33,7 +33,11 @@ function Member(fn, ln, dpt, sec, faddr, lat, lng) {
 function getName() {
     return this.fn + " " + this.ln;
 }
+function getLink() {
+    return "<a class=\"memberLink\" target=\"_blank\" href=\"http://groups.yahoo.com/group/Guindy1986/database?query=" + escape(this.fn) + "&submit=Search&method=reportRows&tbl=4\">" + this.getName() + "</a>";
+}
 Member.prototype.getName = getName;
+Member.prototype.getLink = getLink;
 
 function locations() {
     var locs = new Array();
@@ -59,7 +63,7 @@ function hookem(map, locs) {
         content += "<table style=\"border-collapse:collapse\">";
         for (var i=0; i<mems.length; i++) {
             content += "<tr>";
-            content += "<td><strong>" + mems[i].getName() + "</strong></td>";
+            content += "<td><strong>" + mems[i].getLink() + "</strong></td>";
             content += "<td><em>" + mems[i].dpt + "</em></td>";
             if (mems[i].sec != null)
                 content += "<td><em>" + mems[i].sec + "</em></td>";
